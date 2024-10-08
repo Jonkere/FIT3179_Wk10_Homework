@@ -11,7 +11,7 @@
       "x": {"field": "Year", "type": "temporal"},
       "y": {"field": "Cattle", "type": "quantitative"},
       "color": {"field": "Entity", "type": "nominal"},
-      "tooltip": [{"field":"Entity","type":"nominal"},{"field": "Year", "type":"temporal"},{"field":"Cattle", "type":"nominal"}]
+      "tooltip": [{"field":"Entity","type":"nominal"},{"field": "Year", "type":"temporal"},{"field":"Cattle", "type":"quantitative", "format":",.0f"}]
     }},
     {
         "data": {"values": [{}]},
