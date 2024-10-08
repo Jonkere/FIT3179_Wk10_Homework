@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height":200,
+    "description": "Cows over time.",
+    "title": "Number of Cows over time in different countries.",
+    "layer":[
+    {"data": {"url": "./data/cattle-livestock-count-heads.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Cattle", "type": "quantitative"},
+      "color": {"field": "Entity", "type": "nominal"},
+      "tooltip": [{"field":"Entity","type":"nominal"},{"field": "Year", "type":"temporal"},{"field":"Cattle", "type":"nominal"}]
+    }},
+    {
+        "data": {"values": [{}]},
+        "mark": {"type": "rule", "strokeDash": [2,2], "size": 2},
+        "encoding": {"x": {"datum": {"year": 1991}}}
+    },
+    {
+        "data": {
+          "values": [
+            {"Year": 2004, "Cattle": 130000000}
+         ]
+       },
+        "mark": {"type": "text", "fontSize" : 13, "fontWeight":"bold", "align" : "left"},
+        "encoding": {
+          "text": {"value": "Collapse of Soviet Union"},
+          "x": {"field": "Year", "type": "temporal", "title":""},
+          "y": {"field": "Cattle", "type": "quantitative", "title":""}     
+        }
+      }]
+  }
